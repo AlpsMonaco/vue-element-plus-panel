@@ -1,47 +1,38 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <el-container>
+    <el-aside width="200px">
+      <h5 class="mb-2">Default colors</h5>
+      <el-menu default-active="calendar" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" router>
+        <el-menu-item index="calendar">
+          <el-icon><icon-menu /></el-icon>
+          <span>Calendar</span>
+        </el-menu-item>
+        <el-menu-item index="table">
+          <el-icon>
+            <setting />
+          </el-icon>
+          <span>Table</span>
+        </el-menu-item>
+      </el-menu>
+    </el-aside>
+    <el-main>
+      <RouterView />
+    </el-main>
+  </el-container>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script lang="ts" setup>
+import {
+  Document,
+  Menu as IconMenu,
+  Location,
+  Setting,
+} from '@element-plus/icons-vue'
+const handleOpen = (key: string, keyPath: string[]) => {
+  console.log(key, keyPath)
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+const handleClose = (key: string, keyPath: string[]) => {
+  console.log(key, keyPath)
 }
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+</script>
