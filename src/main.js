@@ -23,4 +23,7 @@ for (const el of elements) {
 }
 
 app.use(router)
-app.mount('#app')
+
+router.isReady().then(()=>{
+    app.mount('#app')
+})

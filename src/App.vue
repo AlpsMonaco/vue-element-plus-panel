@@ -25,14 +25,19 @@ import {
   Menu as IconMenu,
   Setting,
 } from '@element-plus/icons-vue'
-import { onMounted, ref } from 'vue';
-const activateIndex = ref('calendar')
+import { nextTick, onMounted, ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
+const activateIndex = ref('')
+
+const route = useRoute()
 
 onMounted(() => {
-  const path = window.location.href.slice(window.location.href.lastIndexOf('/') + 1)
-  if (path)
-    activateIndex.value = path
+  console.log(
+    route.path
+  )
+  activateIndex.value = route.path.slice(1)
 })
+
 
 </script>
 
