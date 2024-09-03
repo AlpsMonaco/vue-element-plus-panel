@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-aside width="200px">
-      <el-menu default-active="calendar" router>
+      <el-menu default-active="calendar" @open="onOpen" router>
         <el-menu-item index="calendar">
           <el-icon><icon-menu /></el-icon>
           <span>Calendar</span>
@@ -25,6 +25,10 @@ import {
   Menu as IconMenu,
   Setting,
 } from '@element-plus/icons-vue'
+
+const onOpen = (...val)=>{
+  console.log(val)
+}
 </script>
 
 <style scoped>
