@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import ElementPlus, { ElAside, ElButton, ElCalendar, ElContainer, ElHeader, ElIcon, ElMenu, ElSubMenu, ElTable } from 'element-plus'
+import { ElAside, ElButton, ElCalendar, ElContainer, ElHeader, ElIcon, ElMenu, ElSubMenu, ElTable } from 'element-plus'
 import 'element-plus/dist/index.css'
 
 import App from './App.vue'
@@ -18,7 +18,7 @@ const elements = [
     ElTable,
 ]
 
-for (const el of elements){
+for (const el of elements) {
     app.use(el)
 }
 
