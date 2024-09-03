@@ -9,6 +9,12 @@ const routes = [
     { path: '/calendar', component: () => import('@/components/Calendar.vue'), name: "calendar" },
 ]
 
+// function definePage(page) {
+//     routes.push({ path: '/' + page.toLowerCase(), component: () => import(`./components/${page}.vue`), name: page.toLowerCase() },)
+// }
+
+// definePage('Table')
+
 const router = createRouter({
     history: createWebHashHistory(),
     routes,
