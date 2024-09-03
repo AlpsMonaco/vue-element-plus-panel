@@ -1,5 +1,4 @@
 <template>
-    <el-button @click='clickMe' type="primary">Primary</el-button>
     <el-calendar v-model="value" />
 </template>
 

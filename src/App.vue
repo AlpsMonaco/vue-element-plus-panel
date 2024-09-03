@@ -1,8 +1,7 @@
 <template>
   <el-container>
     <el-aside width="200px">
-      <h5 class="mb-2">Default colors</h5>
-      <el-menu default-active="calendar" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" router>
+      <el-menu default-active="calendar" router>
         <el-menu-item index="calendar">
           <el-icon><icon-menu /></el-icon>
           <span>Calendar</span>
@@ -19,20 +18,17 @@
       <RouterView />
     </el-main>
   </el-container>
-
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import {
-  Document,
   Menu as IconMenu,
-  Location,
   Setting,
 } from '@element-plus/icons-vue'
-const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
-const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
 </script>
+
+<style scoped>
+.el-menu-item {
+  font-size: 15px;
+}
+</style>
