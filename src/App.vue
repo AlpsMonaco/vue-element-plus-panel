@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-aside width="200px">
-      <el-menu default-active="calendar" @open="onOpen" router>
+      <el-menu :default-active="activateIndex" router>
         <el-menu-item index="calendar">
           <el-icon><icon-menu /></el-icon>
           <span>Calendar</span>
@@ -25,10 +25,15 @@ import {
   Menu as IconMenu,
   Setting,
 } from '@element-plus/icons-vue'
+import { onMounted, ref } from 'vue';
+const activateIndex = ref('calendar')
 
-const onOpen = (...val)=>{
-  console.log(val)
-}
+onMounted(() => {
+  const path = window.location.href.slice(window.location.href.lastIndexOf('/') + 1)
+  if (path)
+    activateIndex.value = path
+})
+
 </script>
 
 <style scoped>
